@@ -1,0 +1,25 @@
+Basic rails enviroment installation script for Ubuntu
+Developed by Marcelo Murad - email at marcelomurad dot com
+You can redistribute it and/or modify it under either the terms of the GPL (http://www.gnu.org/licenses/gpl-3.0.txt)
+
+When executed it will:
+
+- Install the following packages
+  -ssh
+  -ruby
+  -ruby1.8-dev
+  -ruby-pkg-tools
+  -rdoc
+  -ri
+  -irb
+  -sqlite3
+  -libopenssl-ruby
+  -libsqlite3-ruby
+  -sqlitebrowser
+  -wget
+
+- Download rubygems-1.3.1 and install
+
+- Create symlink for gem in /usr/bin
+
+- Install rails gem
