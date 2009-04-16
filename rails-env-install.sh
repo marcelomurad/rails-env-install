@@ -4,7 +4,7 @@
 #You can redistribute it and/or modify it under either the terms of the GPL (http://www.gnu.org/licenses/gpl-3.0.txt)
 
 #separated by space
-ADDITIONAL_PACKAGES="mc"
+ADDITIONAL_PACKAGES="" #ex. "mc"
 ADDITIONAL_GEMS="rspec ruby-debug"
 
 sudo apt-get update
@@ -17,11 +17,11 @@ sudo apt-get install -y $ADDITIONAL_PACKAGES
 
 mkdir temp_install_rails_env
 
-wget http://rubyforge.org/frs/download.php/45905/rubygems-1.3.1.tgz -Otemp_install_rails_env/rubygems-1.3.1.tgz
+wget http://rubyforge.org/frs/download.php/55066/rubygems-1.3.2.tgz -Otemp_install_rails_env/rubygems-1.3.2.tgz
 
-tar -xf temp_install_rails_env/rubygems-1.3.1.tgz
+tar -xf temp_install_rails_env/rubygems-1.3.2.tgz
 
-cd rubygems-1.3.1
+cd rubygems-1.3.2
 
 sudo ruby setup.rb
 
