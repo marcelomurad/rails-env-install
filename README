@@ -2,6 +2,7 @@ Basic rails enviroment installation script for Ubuntu
 Developed by Marcelo Murad - email at marcelomurad dot com
 You can redistribute it and/or modify it under either the terms of the GPL (http://www.gnu.org/licenses/gpl-3.0.txt)
 
+==== rails-env-install.sh ===
 When executed it will:
 
 - Install the following packages
@@ -18,8 +19,30 @@ When executed it will:
   -sqlitebrowser
   -wget
 
-- Download rubygems-1.3.1 and install
+- Download rubygems-1.3.2 and install
 
 - Create symlink for gem in /usr/bin
 
 - Install rails gem
+
+- Additional gems installation rspec ruby-debug
+
+
+=== passenger-mysql-env-install.sh ===
+When executed it will:
+
+- Install the following packages
+  -apache2
+  -mysql-server-5.0
+  -build-essential
+  -gcc
+  -apache2-prefork-dev
+  -libmysql-ruby
+  -libmysqlclient15-dev
+
+- Install passenger 2.2.0, mysql gem
+
+- Install passenger to apache
+
+- Add passenger module to apache and enable it
+
