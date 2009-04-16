@@ -20,5 +20,18 @@ sudo mv passenger.load /etc/apache2/mods-available/
 sudo mv passenger.conf /etc/apache2/mods-available/
 sudo a2enmod passenger
 
+echo "NameVirtualHost *
+<VirtualHost *>
+    ServerName site_name.domain_name.com
+    DocumentRoot /directory_path_to_rails_app/public
+</VirtualHost>" >> example.local
+
+sudo mv example.local /etc/apache2/sites-available/
+
 sudo /etc/init.d/apache2 reload
+
+echo "############################################################"
+echo "A basic example of apache site configuration is available at"
+echo "/etc/apache2/sites-available/example.local"
+echo "############################################################"
 
