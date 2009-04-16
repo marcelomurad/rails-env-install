@@ -5,7 +5,7 @@
 
 #separated by space
 ADDITIONAL_PACKAGES="mc"
-ADDITIONAL_GEMS="rspec"
+ADDITIONAL_GEMS="rspec ruby-debug"
 
 sudo apt-get update
 
@@ -27,6 +27,7 @@ sudo ruby setup.rb
 
 sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
 
-sudo gem install rails -no-ri -no-rdoc
+sudo gem install rails --no-rdoc --no-ri
 
-sudo gem install $ADDITIONAL_GEMS
+sudo gem install $ADDITIONAL_GEMS --no-rdoc --no-ri
+
