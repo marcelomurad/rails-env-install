@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="prompt_type" mtime="1206769687" type="string">
+                <stringvalue>PROMPT_FOR_FORMAT</stringvalue>
+        </entry>
+</gconf>

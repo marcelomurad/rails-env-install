@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="print_font_numbers_pango" mtime="1239828258" type="string">
+                <stringvalue>Sans 8</stringvalue>
+        </entry>
+        <entry name="print_font_header_pango" mtime="1239828258" type="string">
+                <stringvalue>Sans 11</stringvalue>
+        </entry>
+        <entry name="print_font_body_pango" mtime="1239828258" type="string">
+                <stringvalue>Monospace 9</stringvalue>
+        </entry>
+</gconf>

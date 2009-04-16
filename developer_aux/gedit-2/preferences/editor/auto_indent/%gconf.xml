@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="auto_indent" mtime="1200714348" type="bool" value="true">
+        </entry>
+</gconf>

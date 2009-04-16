@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="colour_define" mtime="1239717416" type="string">
+                <stringvalue>#ea0000</stringvalue>
+        </entry>
+        <entry name="colour_class" mtime="1239717416" type="string">
+                <stringvalue>#c34e4e</stringvalue>
+        </entry>
+        <entry name="colour_member" mtime="1239717416" type="string">
+                <stringvalue>#0000ea</stringvalue>
+        </entry>
+        <entry name="colour_namespace" mtime="1239717416" type="string">
+                <stringvalue>#004e00</stringvalue>
+        </entry>
+        <entry name="colour_enumerator" mtime="1239717416" type="string">
+                <stringvalue>#000000</stringvalue>
+        </entry>
+        <entry name="colour_function" mtime="1239717416" type="string">
+                <stringvalue>#c300ea</stringvalue>
+        </entry>
+        <entry name="jumpToTagOnMiddleClick" mtime="1239717416" type="bool" value="true">
+        </entry>
+        <entry name="autocollapse" mtime="1239717416" type="bool" value="true">
+        </entry>
+        <entry name="verbose" mtime="1239717416" type="bool" value="false">
+        </entry>
+</gconf>

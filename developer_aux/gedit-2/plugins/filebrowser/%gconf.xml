@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="filter_mode" mtime="1209234968" type="string">
+                <stringvalue>hidden_and_binary</stringvalue>
+        </entry>
+        <entry name="filter_pattern" mtime="1204589500" type="string">
+                <stringvalue></stringvalue>
+        </entry>
+</gconf>

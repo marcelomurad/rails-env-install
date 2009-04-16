@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="smart_home_end" mtime="1207415701" type="string">
+                <stringvalue>BEFORE</stringvalue>
+        </entry>
+</gconf>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="wrap_mode" mtime="1207430375" type="string">
+                <stringvalue>GTK_WRAP_NONE</stringvalue>
+        </entry>
+</gconf>

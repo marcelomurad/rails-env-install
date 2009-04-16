@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="statusbar_visible" mtime="1239890294" type="bool" value="true">
+        </entry>
+</gconf>

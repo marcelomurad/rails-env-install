@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="print_wrap_mode" mtime="1239828258" type="string">
+                <stringvalue>GTK_WRAP_WORD</stringvalue>
+        </entry>
+        <entry name="print_line_numbers" mtime="1239828258" type="int" value="0">
+        </entry>
+        <entry name="print_header" mtime="1239828258" type="bool" value="true">
+        </entry>
+        <entry name="print_syntax_highlighting" mtime="1239828258" type="bool" value="true">
+        </entry>
+</gconf>

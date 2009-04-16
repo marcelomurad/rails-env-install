@@ -46,3 +46,13 @@ When executed it will:
 
 - Add passenger module to apache and enable it
 
+
+=== developer-env-install.sh ===
+When executed it will:
+
+- Enable irb autocomplete
+
+- Download and install gmate from github (http://github.com/lexrupy/gmate/tree/master)
+
+- Set my default configurations to gedit
+
