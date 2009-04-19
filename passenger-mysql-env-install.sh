@@ -7,13 +7,13 @@ sudo apt-get install -y apache2 mysql-server-5.0 build-essential gcc apache2-pre
 
 sudo gem install mysql --no-rdoc --no-ri
 
-sudo gem install passenger -v2.2.0 --no-rdoc --no-ri
+sudo gem install passenger -v2.2.1 --no-rdoc --no-ri
 
 sudo passenger-install-apache2-module
 
 
-echo "LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-2.2.0/ext/apache2/mod_passenger.so" >> passenger.load
-echo "PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-2.2.0
+echo "LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-2.2.1/ext/apache2/mod_passenger.so" >> passenger.load
+echo "PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-2.2.1
 PassengerRuby /usr/bin/ruby1.8" >> passenger.conf
 
 sudo mv passenger.load /etc/apache2/mods-available/
