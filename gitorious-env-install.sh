@@ -3,6 +3,8 @@
 #Developed by Marcelo Murad - email at marcelomurad dot com
 #You can redistribute it and/or modify it under either the terms of the GPL (http://www.gnu.org/licenses/gpl-3.0.txt)
 
+MYSQL_PASS="mysql_password"
+
 if [ "$(whoami)" != "root" ]; then
 echo "You need to be root to run this!"
   exit 2
@@ -49,6 +51,7 @@ sed s/gitorious_host/#gitorious_host/ config/gitorious1.yml >> config/gitorious2
 sed s/gitorious_client_port/#gitorious_client_port/ config/gitorious2.yml >> config/gitorious3.yml
 sed s/gitorious_client_host/#gitorious_client_host/ config/gitorious3.yml >> config/gitorious4.yml
 mv config/gitorious4.yml config/gitorious.yml
+echo '====jabuti====='
 echo 'repository_base_path: "/srv/git_repositories"' >> config/gitorious.yml
 echo 'gitorious_host: git.livingnet.com.br' >> config/gitorious.yml
 echo 'gitorious_client_port: 80' >> config/gitorious.yml
@@ -73,7 +76,7 @@ gem uninstall -v1.2.4 rspec
 gem install diff-lcs --no-ri --no-rdoc
 
 echo "CREATE DATABASE \`gitorious\` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;" > temp.mysql
-mysql -uroot -p < temp.mysql
+mysql -uroot -p$MYSQL_PASS < temp.mysql
 rm temp.mysql
 
 
@@ -84,7 +87,7 @@ echo "production:
   adapter: mysql
   database: gitorious
   username: root
-  password: password
+  password: $MYSQL_PASS
   host: localhost
   encoding: utf8" > config/database.yml
 
