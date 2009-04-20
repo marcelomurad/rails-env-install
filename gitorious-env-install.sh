@@ -51,8 +51,7 @@ sed s/gitorious_host/#gitorious_host/ config/gitorious1.yml >> config/gitorious2
 sed s/gitorious_client_port/#gitorious_client_port/ config/gitorious2.yml >> config/gitorious3.yml
 sed s/gitorious_client_host/#gitorious_client_host/ config/gitorious3.yml >> config/gitorious4.yml
 mv config/gitorious4.yml config/gitorious.yml
-echo '====jabuti====='
-echo 'repository_base_path: "/srv/git_repositories"' >> config/gitorious.yml
+echo 'repository_base_path: /srv/git_repositories' >> config/gitorious.yml
 echo 'gitorious_host: git.livingnet.com.br' >> config/gitorious.yml
 echo 'gitorious_client_port: 80' >> config/gitorious.yml
 echo 'gitorious_client_host: git.livingnet.com.br' >> config/gitorious.yml
