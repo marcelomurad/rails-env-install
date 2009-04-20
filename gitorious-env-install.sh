@@ -44,14 +44,16 @@ sed s/ssssht/`rake -s secret`/ config/gitorious.sample.yml >> config/gitorious.y
 #nano config/gitorious.yml
 #repository_base_path: "/srv/git_repositories"
 #gitorious_host: git.livingnet.com.br
-sed s/repository_base_path/#repository_base_path/ config/gitorious.yml >> config/gitorious.yml
-sed s/gitorious_host/#gitorious_host/ config/gitorious.yml >> config/gitorious.yml
-sed s/gitorious_client_port/#gitorious_client_port/ config/gitorious.yml >> config/gitorious.yml
-sed s/gitorious_client_host/#gitorious_client_host/ config/gitorious.yml >> config/gitorious.yml
+sed s/repository_base_path/#repository_base_path/ config/gitorious.yml >> config/gitorious1.yml
+sed s/gitorious_host/#gitorious_host/ config/gitorious1.yml >> config/gitorious2.yml
+sed s/gitorious_client_port/#gitorious_client_port/ config/gitorious2.yml >> config/gitorious3.yml
+sed s/gitorious_client_host/#gitorious_client_host/ config/gitorious3.yml >> config/gitorious4.yml
+mv config/gitorious4.yml config/gitorious.yml
 echo 'repository_base_path: "/srv/git_repositories"' >> config/gitorious.yml
 echo 'gitorious_host: git.livingnet.com.br' >> config/gitorious.yml
 echo 'gitorious_client_port: 80' >> config/gitorious.yml
 echo 'gitorious_client_host: git.livingnet.com.br' >> config/gitorious.yml
+rm config/gitorious1.yml config/gitorious2.yml config/gitorious3.yml
 
 
 
@@ -78,7 +80,15 @@ rm temp.mysql
 
 
 
+echo "production:
+  adapter: mysql
+  database: gitorious
+  username: root
+  password: password
+  host: localhost
+  encoding: utf8" > config/database.yml
 
+chown git:www-data config/database.yml
 
 
 
@@ -100,6 +110,17 @@ touch log/production.log
 touch log/tasks.log
 
 chown -Rf git:www-data log/
+
+echo "NameVirtualHost *
+<VirtualHost *>
+    ServerName git.livingnet.com.br
+    DocumentRoot /srv/gitorious/public
+</VirtualHost>" >> git.livingnet.com.br
+
+mv git.livingnet.com.br /etc/apache2/sites-available
+a2ensite git.livingnet.com.br
+
+/etc/init.d/apache2 reload
 
 
 ###su git
