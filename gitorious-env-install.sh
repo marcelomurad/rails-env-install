@@ -4,6 +4,7 @@
 #You can redistribute it and/or modify it under either the terms of the GPL (http://www.gnu.org/licenses/gpl-3.0.txt)
 
 MYSQL_PASS="mysql_password"
+GITORIOUS_HOST="git.yourdomain.com"
 
 if [ "$(whoami)" != "root" ]; then
 echo "You need to be root to run this!"
@@ -56,9 +57,9 @@ echo '===jabuti==='
 echo '' >> config/gitorious.yml
 echo '===jabuti==='
 echo 'repository_base_path: /srv/git_repositories' >> config/gitorious.yml
-echo 'gitorious_host: git.livingnet.com.br' >> config/gitorious.yml
+echo "gitorious_host: $GITORIOUS_HOST" >> config/gitorious.yml
 echo 'gitorious_client_port: 80' >> config/gitorious.yml
-echo 'gitorious_client_host: git.livingnet.com.br' >> config/gitorious.yml
+echo "gitorious_client_host: $GITORIOUS_HOST" >> config/gitorious.yml
 rm config/gitorious1.yml config/gitorious2.yml config/gitorious3.yml
 
 
@@ -119,12 +120,12 @@ chown -Rf git:www-data log/
 
 echo "NameVirtualHost *
 <VirtualHost *>
-    ServerName git.livingnet.com.br
+    ServerName $GITORIOUS_HOST
     DocumentRoot /srv/gitorious/public
-</VirtualHost>" >> git.livingnet.com.br
+</VirtualHost>" >> $GITORIOUS_HOST
 
-mv git.livingnet.com.br /etc/apache2/sites-available
-a2ensite git.livingnet.com.br
+mv $GITORIOUS_HOST /etc/apache2/sites-available
+a2ensite $GITORIOUS_HOST
 
 /etc/init.d/apache2 reload
 
