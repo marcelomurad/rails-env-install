@@ -2,6 +2,16 @@ Basic rails enviroment installation script for Ubuntu
 Developed by Marcelo Murad - email at marcelomurad dot com
 You can redistribute it and/or modify it under either the terms of the GPL (http://www.gnu.org/licenses/gpl-3.0.txt)
 
+==== gitorious-env-install.sh ===
+When executed it will install gitorious with all it dependencies packages and gems.
+This script was tested with ubuntu 8.04 server, but it can fail because the hardcoded
+versions in it.
+
+- Todo
+  - Dont ask for mysql password
+  - Remove hardcoded versions of gems
+  - Put some error verifications
+
 ==== rails-env-install.sh ===
 When executed it will:
 
