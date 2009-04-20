@@ -3,13 +3,18 @@
 #Developed by Marcelo Murad - email at marcelomurad dot com
 #You can redistribute it and/or modify it under either the terms of the GPL (http://www.gnu.org/licenses/gpl-3.0.txt)
 
+if [ "$(whoami)" != "root" ]; then
+echo "You need to be root to run this!"
+  exit 2
+fi
+
 sudo apt-get install -y apache2 mysql-server-5.0 build-essential gcc apache2-prefork-dev libmysql-ruby libmysqlclient15-dev
 
 sudo gem install mysql --no-rdoc --no-ri
 
 sudo gem install passenger -v2.2.1 --no-rdoc --no-ri
 
-sudo passenger-install-apache2-module
+yes '' | passenger-install-apache2-module
 
 
 echo "LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-2.2.1/ext/apache2/mod_passenger.so" >> passenger.load
