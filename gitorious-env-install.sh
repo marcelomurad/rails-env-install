@@ -130,21 +130,21 @@ a2ensite $GITORIOUS_HOST
 /etc/init.d/apache2 reload
 
 
+mkdir /home/git/.ssh
+chmod 700 /home/git/.ssh
+chown git:nogroup /home/git/.ssh
+touch /home/git/.ssh/authorized_keys
+chmod 640 /home/git/.ssh/authorized_keys
+chown git:nogroup /home/git/.ssh/authorized_keys
+
+echo "*/1 * * * * /srv/gitorious/script/task_performer" > /var/spool/cron/crontabs/git
+chown git:crontab /var/spool/cron/crontabs/git
+chmod 600 /var/spool/cron/crontabs/git
+
+usermod -s/bin/bash git
+
 echo "=================================================="
-echo "edit shell of git user to /bin/bash in /etc/passwd"
-echo "and continue with git user configuration from here"
+echo "All set now you can access $GITORIOUS_HOST"
+echo "and create your user"
 echo "=================================================="
-
-
-###su git
-###cd ~
-###mkdir .ssh
-###chmod 700 .ssh
-###touch .ssh/authorized_keys
-###chmod 640 .ssh/authorized_keys
-
-###crontab -e
-###*/5 * * * * /srv/gitorious/script/task_performer
-
-###exit
 
