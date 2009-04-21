@@ -30,7 +30,13 @@ adduser git --system --disabled-password
 
 apt-get install -y libmagick9-dev
 
-cd /srv
+if [ -d /srv ]
+then
+   cd /srv
+else
+  mkdir /srv
+  cd /srv
+fi
 
 git clone git://gitorious.org/gitorious/mainline.git  gitorious
 
@@ -66,6 +72,13 @@ rm config/gitorious1.yml config/gitorious2.yml config/gitorious3.yml
 
 gem install hoe -v1.8.2 --no-ri --no-rdoc
 yes | gem uninstall hoe -v1.12.2
+###ruby script
+###hoe_line=`gem list | grep ^hoe`
+###hoe_line.chomp!
+###hoe_line = hoe_line.sub(/hoe.\(/,'').strip.sub(/\)/,'')
+###arr_hoe_versions = hoe_line.split(', ')
+###arr_hoe_versions.delete('1.8.2')
+###arr_hoe_versions.each{|d| `/usr/bin/gem uninstall hoe -v#{d}`}
 
 
 gem install geoip -v0.8.0 --no-ri --no-rdoc
