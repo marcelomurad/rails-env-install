@@ -27,6 +27,8 @@ sudo ruby setup.rb
 
 sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
 
+sudo gem update --system
+
 sudo gem install rails --no-rdoc --no-ri
 
 sudo gem install $ADDITIONAL_GEMS --no-rdoc --no-ri
